@@ -1,10 +1,6 @@
-$().document.ready({
+// A $( document ).ready() block.
+$( document ).ready(function() {
 
-	//prevent all forms from default submit behavior
-	$('FORM').submit(function(e){
-    return false;
-});
+	console.log('Doc Ready().');
 
-$("input[value='Hot Fuzz']").on("click", "body", function(event){
-	console.log('Process step1');
 });
