@@ -1,5 +1,5 @@
 // A $( document ).ready() block.
-$( document ).ready(function() {
+$(document).ready(function() {
 
 	console.log('Doc Ready().');
 
