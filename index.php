@@ -40,5 +40,4 @@
         </form>
         <div id="stepOneError"></div>
 
-    </body>
-<?php include_once('includes/footer.php'); ?>
+    <?php include_once('includes/footer.php'); ?>
