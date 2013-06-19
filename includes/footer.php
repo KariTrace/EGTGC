@@ -7,15 +7,3 @@
         
         <script src="./js/plugins.js"></script>
         <script src="./js/main.js"></script>
-        <script><!--//
-            $("#processStepOne").on("click", function (event){
-                console.log('here');
-
-                //validate API data:
-                //KeyID: numeric / inf. length: 2270116
-                //vCode: alpha-numeric / 64 length: YNQfkcSflDkeZAPqWWeIxL8XyyZszcmBg1S7j8vZKLoQi4ajLxIbKM2KwJ7sf0k8
-
-            });
-        --></script>
-    </body>
-</html>

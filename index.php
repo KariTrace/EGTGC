@@ -29,7 +29,7 @@
         <h4>Paste the related information into the boxes below.</h4>
 
 
-        <form>
+        <form id="stepOne">
             <lable>EVE API Key ID</lable>
             <input type="text" name="keyID">
 
@@ -40,4 +40,16 @@
         </form>
         <div id="stepOneError"></div>
 
-    <?php include_once('includes/footer.php'); ?>
+        <?php include_once('includes/footer.php'); ?>
+        <script><!--//
+            $("#processStepOne").on("click", function (event){
+                console.log('here');
+                $("#stepOne").validate();
+
+                //validate API data:
+                //KeyID: numeric / inf. length: 2270116
+                //vCode: alpha-numeric / 64 length: YNQfkcSflDkeZAPqWWeIxL8XyyZszcmBg1S7j8vZKLoQi4ajLxIbKM2KwJ7sf0k8
+            });
+        --></script>
+    </body>
+</html>
