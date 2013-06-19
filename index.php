@@ -1,4 +1,6 @@
 <?php
+    include_once('/vendor/autoload.php');
+
     //auto load here, need to get use to autoloading and using libs
     $vendor     = "vendor/";
     $components = "components/";
@@ -27,23 +29,16 @@
         <h4>Paste the related information into the boxes below.</h4>
 
 
-        <form id="eveApiData">
+        <form>
             <lable>EVE API Key ID</lable>
             <input type="text" name="keyID">
 
             <lable>EVE API Verification Code</lable>
             <input type="text" name="vCode">
 
-            <input type="button" value="Proceed to Step Two &#61&#62" name="processStepOne" />
+            <input type="button" value="Proceed to Step Two &#61&#62" id="processStepOne" />
         </form>
+        <div id="stepOneError"></div>
 
-
-
-
-        <!-- jQ and other end page scripting-->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
     </body>
-</html>
+<?php include_once('includes/footer.php'); ?>
