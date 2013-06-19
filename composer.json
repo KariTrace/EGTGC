@@ -1,6 +1,6 @@
 {
     "name": "kari.eve.trace/egtgc",
-    "description": "Export EVE Gate calendar events and automaticlly import to Google Calendar.",
+    "description": "Synchronize EVE Gate events to Google Calendar for easy access via any web based platform.",
     "license": "MIT",
     "authors": [
         {
