@@ -10,7 +10,7 @@
     ],
     "minimum-stability": "RC",
     "require": {   
-        "phpunit/phpunit": "3.7.*@dev",
+        "phpunit/phpunit": "3.7.*",
         "monolog/monolog": "1.4.*@dev",
         "pheal/pheal": "dev-master",
         "bitgandtter/google-api": "dev-master",
