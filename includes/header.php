@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="<?= $components; ?>require.css">
     <link rel="stylesheet" href="<?= $components; ?>html5-boilerplate/css/main.css">
     <link rel="stylesheet" href="<?= $components; ?>normalize.css/normalize.css">        
+    <link rel="stylesheet" href="./css/egtgc.css">  
 
     <!-- JS includes -->
     <script src="<?= $components; ?>require.js"></script>
