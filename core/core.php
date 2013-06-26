@@ -43,7 +43,19 @@ class core {
 	}
 
 	/**
+	 * Get all data from session container. Process data as a complete form
+	 * @author kari.eve.trace@gmail.com
+	 * @since 2013-06-26
+	 * @param object $paramatar [required] Object of completed form(s) data
+	 * @return boolean
 	 */
+	public function processData(object $paramater)
+	{
+		// Always fail be default
+		$return = false;
 
+		return $return;
 	}
 }
+
+$core = new core($_POST);
