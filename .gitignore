@@ -2,3 +2,4 @@ composer.lock
 vendor/*
 components/*
 *.phar
+core/php_errors.log
