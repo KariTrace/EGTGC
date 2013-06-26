@@ -16,14 +16,14 @@ class core {
 	 * Build the 'core' form handler
 	 * @author kari.eve.trace@gmail.com
 	 * @since 2013-06-26
-	 * @param array $paramater [required] Raw data from a submitted form
+	 * @param array $parameter [required] Raw data from a submitted form
 	 * @return void Return is dependant on $this->output()
 	 */
-	public function __construct($paramater)
+	public function __construct($parameter)
 	{
 
 		// Clean the form data
-		$clean_data = new cleaner($paramater);
+		$clean_data = new cleaner($parameter);
 
 		// If form data is valid
 		if ($clean_data->bool) {
@@ -49,7 +49,7 @@ class core {
 	 * @param object $paramatar [required] Object of completed form(s) data
 	 * @return boolean
 	 */
-	public function processData(object $paramater)
+	public function processData(object $parameter)
 	{
 		// Always fail be default
 		$return = false;

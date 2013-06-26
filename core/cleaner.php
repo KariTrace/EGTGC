@@ -15,24 +15,24 @@ class cleaner {
 
 	/**
 	 * __constructor for cleaner()
-	 * @param array $paramater Form data via $_REQUEST
+	 * @param array $parameter Form data via $_REQUEST
 	 * @return  boolen Return if the $_REQUEST data is valid per sanitization
 	 */
-	public function __construct($paramater) {
+	public function __construct($parameter) {
 		$this->return_data = new stdClass;
 
-		return $this->main($paramater);
+		return $this->main($parameter);
 	}
 	
 	/**
 	 * Takes input, cleans it.
-	 * @param void $paramater Form data passed in from $core->__construct()
+	 * @param void $parameter Form data passed in from $core->__construct()
 	 * @return object $this->repsonse Validated and sanitized return data
 	 */
-	private function main($paramater) {
+	private function main($parameter) {
 
 		// Put form data into a stdClass k=>v setup
-		foreach ($paramater as $key => $value)
+		foreach ($parameter as $key => $value)
 		{
 			$this->return_data->$key = $value;
 		}
