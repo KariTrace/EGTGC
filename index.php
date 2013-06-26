@@ -28,28 +28,20 @@
 
         <h4>Paste the related information into the boxes below.</h4>
 
-
-        <form id="stepOne">
+        <form id="eveAPIForm" method="post">
             <lable>EVE API Key ID</lable>
-            <input type="text" name="keyID">
+            <input type="text" name="keyID" value="123456">
 
             <lable>EVE API Verification Code</lable>
-            <input type="text" name="vCode">
+            <input type="text" name="vCode" value="asdf123456789012345678901234567890123456789012345678901234567890">
 
-            <input type="button" value="Proceed to Step Two &#61&#62" id="processStepOne" />
+            <!--// Indicate to the core what form we are-->
+            <input type="hidden" name="form_name" value="eveAPI">
+
+            <input type="button" value="Clear" id="clearStepOne" class="resetForm" />
+            <input type="submit" value="Proceed to Step Two &#61&#62" id="processEVEAPI" />
         </form>
-        <div id="stepOneError"></div>
 
         <?php include_once('includes/footer.php'); ?>
-        <script><!--//
-            $("#processStepOne").on("click", function (event){
-                console.log('here');
-                $("#stepOne").validate();
-
-                //validate API data:
-                //KeyID: numeric / inf. length: 2270116
-                //vCode: alpha-numeric / 64 length: YNQfkcSflDkeZAPqWWeIxL8XyyZszcmBg1S7j8vZKLoQi4ajLxIbKM2KwJ7sf0k8
-            });
-        --></script>
     </body>
 </html>
