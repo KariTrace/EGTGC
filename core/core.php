@@ -1,7 +1,11 @@
 <?php
 /**
+ * @author kari.eve.trace@gmail.com
+ * @since 2013-06-26
  * The basic core form processor for EGTGC.
  */
+include_once('./output.php');
+include_once('./cleaner.php');
 
 class core {
 	

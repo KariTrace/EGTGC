@@ -4,9 +4,9 @@
  * @author  KT kari.eve.trace@gmail.com
  * @since  2013-06-24
  */
-inclused_once('./core.php');
+include_once('./output.php');
 
-class cleaner extends core{
+class cleaner {
 
 	// Object properties
 	private $return_data;
