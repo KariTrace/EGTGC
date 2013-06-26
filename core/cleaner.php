@@ -19,7 +19,9 @@ class cleaner {
 	 * @param array $paramater Form data via $_REQUEST
 	 * @return  boolen Return if the $_REQUEST data is valid per sanitization
 	 */
-	private function __construct($paramater) {
+	public function __construct($paramater) {
+		$this->return_data = new stdClass;
+
 		return $this->main($paramater);
 	}
 	
@@ -28,7 +30,7 @@ class cleaner {
 	 * @param void $paramater Form data passed in from $core->__construct()
 	 * @return object $this->repsonse Validated and sanitized return data
 	 */
-	public function main($paramater) {
+	private function main($paramater) {
 
 		// Put form data into a stdClass k=>v setup
 		foreach ($paramater as $key => $value)
@@ -42,13 +44,12 @@ class cleaner {
 
 
 		// Return data based on S&V process	
-		if ($this->return_data->bool) {
-
-			$this->return_data->text = "$cleaner->main() is true";
-			return $this->output($this->return_data);
+		if (isset($this->return_data->bool) && $this->return_data->bool) {
+			$this->return_data->bool = true;
+			return $this->return_data;
 		} else {
 
-			return $this->output($this->return_data);
+			return output::main($this->return_data, true);
 		}
 	}
 }
