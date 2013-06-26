@@ -24,7 +24,7 @@ class core {
 
 		// Clean the form data
 		$clean_data = new cleaner($paramater);
-		
+
 		// If form data is valid
 		if ($clean_data->bool) {
 			
