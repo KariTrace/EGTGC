@@ -8,22 +8,18 @@ class output {
 	 * Input processed data, output requested type
 	 * @todo Integrat Monolog Library
 	 * @param stdClass $parameter [required] Data to be returned to the client
-	 * @return null || void Method response when returning data
+	 * @return json || string
 	 */
-	public final function main(stdClass $parameter, $is_valid = true)
+	public final function main(stdClass $parameter)
 	{
 		$parameter->return_type = (!isset($parameter->return_type) ? "json" : null);
 
 		//return PHP data
-		if (!$parameter->return_type || !$parameter->return_type == null) {
-			return $parameter;
+		if (strtolower($parameter->return_type) == "json") {
 
-		// Return JSON object
-		} elseif (strtolower($parameter->return_type) == "json") {
-			return json_encode($parameter);
-
-		// Return data dump
-		} elseif (strtolower($parameter->return_type) == "dump") {
+			print_r(json_encode($parameter));
+			exit;
+		} else {
 			echo '<PRE>';
 			print_r($parmater);
 			echo '</PRE>';
@@ -31,22 +27,22 @@ class output {
 		}
 
 		// If all fails, call itself and dump data.
-		$parameter->return_type = "dump";
-		return $this->ouput($parameter);
+		echo 'output::main has failed';
+		exit;
 	}
 
 	/**
 	 * Debug method, interface for monolog
 	 * @author kari.eve.trace@gmail.com
 	 * @since 2013-06-26
-	 * @param stdClass $parameter [required] Object to be dump printed.
+	 * @param $parameter [required] PHP data to be dump printed.
 	 * @return boolean
 	 */
-	public final function debugger(stdClass $parameter)
+	public final function debugger($parameter)
 	{
 		echo'<PRE>';
 		print_r($parameter);
 		echo'</PRE>';
-		return true;
+		exit;
 	}
 }

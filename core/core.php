@@ -25,20 +25,16 @@ class core {
 		// Clean the form data
 		$clean_data = new cleaner($parameter);
 
-		// If form data is valid
-		if ($clean_data->bool) {
-			
-			// Dump responses
-			output::main($clean_data, true);
 
+		// If form data is valid
+		if ($data->bool) {
 			// What do we do with valid form data? Set it to session var
+
+			output::main($data);
 
 		} else {
 			// TODO clean this up if possible. maybe pass a flag into $this->output that will do this encapsilated within it
-			$this->response->text = "Form not valid";
-			$this->response->bool = false;
-			$this->response->return_type = "json";
-			$this->ouput($this->response);
+			output::debugger($data);
 		}
 	}
 

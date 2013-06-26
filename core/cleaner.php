@@ -8,20 +8,19 @@ include_once('./output.php');
 
 class cleaner {
 
-	// Object properties
-	private $return_data;
-
 
 
 	/**
 	 * __constructor for cleaner()
-	 * @param array $parameter Form data via $_REQUEST
-	 * @return  boolen Return if the $_REQUEST data is valid per sanitization
+	 * @param array $parameter [optional] Form data via $_REQUEST
+	 * @return boolen Return if the $_REQUEST data is valid per sanitization
 	 */
-	public function __construct($parameter) {
-		$this->return_data = new stdClass;
+	public function __construct($parameter = null) {
 
-		return $this->main($parameter);
+		// Pass data to logic method
+		if ($parameter != null) {
+			return $this->main($parameter);
+		}
 	}
 	
 	/**
@@ -31,25 +30,25 @@ class cleaner {
 	 */
 	private function main($parameter) {
 
+		$return_data = new stdClass;
+
 		// Put form data into a stdClass k=>v setup
 		foreach ($parameter as $key => $value)
 		{
-			$this->return_data->$key = $value;
+			$return_data->$key = $value;
 		}
-		output::main($this->return_data, false);
-		
-		// Load some cleaning lib here and check form data
 
+		// Load some cleaning lib here and check form data
+		// TESTING
+		$return_data->bool = true;
 
 
 
 		// Return data based on S&V process	
-		if (isset($this->return_data->bool) && $this->return_data->bool) {
-			$this->return_data->bool = true;
-			return $this->return_data;
+		if ($return_data->bool) {
+			return $return_data;
 		} else {
-
-			return output::main($this->return_data, true);
+			output::debugger($return_data);
 		}
 	}
 }
