@@ -5,21 +5,20 @@
 
 // global jQ functions
 /**
- *Ajax call that accepts numerous paramaters via the options object.
- *@author kari.eve.trace@gmail.com, David Eddy
- *@since 2013-06-26
- *@param object options [required] Js object formatted for ajax reqest
- *@return promise object || variable data formats
+ * Ajax call that accepts numerous paramaters via the options object.
+ * @author kari.eve.trace@gmail.com, David Eddy
+ * @since 2013-06-26
+ * @param object options [required] Js object formatted for ajax reqest
+ * @return promise object || variable data formats
  */
 $.fn.loadData = function(options) { 
     var data = null;
 
-    // Default settings if not passed, set.
+    // Default settings for ajax post/json call
     if (typeof options.async        == 'undefined') {options.async = true;}
     if (typeof options.cache        == 'undefined') {options.cache = true;}
-    // Data
-    if (typeof options.post_type    == 'undefined') {options.post_type      = 'POST';}
-    if (typeof options.return_data  == 'undefined') {options.return_data    = 'json';}
+    if (typeof options.post_type    == 'undefined') {options.post_type 	= 'POST';}
+    if (typeof options.return_data  == 'undefined') {options.return_data= 'json';}
 
     // Finally the meat...
     return $.ajax({
@@ -29,6 +28,9 @@ $.fn.loadData = function(options) {
         type:   options.post_type,
         url:    options.url,
         success: function(data) {
+        	console.log(data);
+        	return true;
+
             //return as JSON if requested - does not work with promise objects!
             if (options.return_data == undefined || options.return_data == false || options.return_data === 'json') {
                 data = jQuery.parseJSON(data);
@@ -68,13 +70,14 @@ $.fn.loadData = function(options) {
         }
     });
 
-    return true;
+	// Failsafe termination of method
+    return false;
 }
 
 
 
 // Global HTML element actions
-$(".resetForm").on("click", function( event ){
+$(".resetForm").on("click", function(event) {
 	// Remove validation labels
 	$("label.validInput").remove();
 	$("label.invalidInput").remove();
@@ -124,13 +127,7 @@ $().ready(function() {
 	            }
 	        },
 			submitHandler: function(form) {
-				// do other stuff for a valid form
-				//form.submit();
-				console.log('Submitted');
-
-				options.data = $("form#stepOne").serialize();
-				console.log(options);
-
+				options.data = $("form#eveAPIForm").serialize();
 				$().loadData(options);
 			},
 	    });
