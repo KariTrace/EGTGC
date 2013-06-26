@@ -10,7 +10,6 @@ class cleaner {
 
 	// Object properties
 	private $return_data;
-	private $valid = false;
 
 
 
@@ -37,7 +36,8 @@ class cleaner {
 		{
 			$this->return_data->$key = $value;
 		}
-
+		output::main($this->return_data, false);
+		
 		// Load some cleaning lib here and check form data
 
 
