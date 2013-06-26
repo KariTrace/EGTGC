@@ -23,7 +23,9 @@ class core {
 	{
 
 		// Clean the form data
-		$clean_data = new cleaner($parameter);
+		$cleaner = new cleaner();
+		$data = $cleaner->__construct($parameter);
+
 
 
 		// If form data is valid
