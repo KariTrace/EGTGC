@@ -14,19 +14,25 @@ class core {
 
 	/**
 	 * Build the 'core' form handler
-	 * @param array $_REQUEST Raw data from a submitted form
+	 * @author kari.eve.trace@gmail.com
+	 * @since 2013-06-26
+	 * @param array $paramater [required] Raw data from a submitted form
 	 * @return void Return is dependant on $this->output()
 	 */
-	public function __construct($_REQUEST) {
-		
+	public function __construct($paramater)
+	{
+
 		// Clean the form data
-		$cleaner = new formCleaner($_REQUEST);
+		$clean_data = new cleaner($paramater);
 		
 		// If form data is valid
-		if ($cleaner->clean()) {
-
+		if ($clean_data->bool) {
+			
 			// Dump responses
-			$this->output(null, true);
+			output::main($clean_data, true);
+
+			// What do we do with valid form data? Set it to session var
+
 		} else {
 			// TODO clean this up if possible. maybe pass a flag into $this->output that will do this encapsilated within it
 			$this->response->text = "Form not valid";
