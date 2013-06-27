@@ -22,17 +22,21 @@
 
         <h4><a href="" target="_new">Click here</a> to get a new Google API key pair specific to EGTGC.</h4>
         <ul>
-            <li class="alert">CHECK THE 'NO EXPIRE' BOX!.</li>
-            <li>Name it EGTGC for easy identification.</li>
+            <li>Recommended: Name your calendar EGTGC for easy identification.</li>
         </ul>
 
         <h4>Paste the related information into the boxes below.</h4>
+        
+        <h4>Sign in with an existing Google Account.</h4>
+        <img sec="" alt="Google sign-in" />
+
+        <h3>OR</h3>
 
         <form id="googleAPIForm" method="post">
             <lable>Google API Public Key</lable>
             <input type="text" name="pubKey" value="">
 
-            <lable>EVE API Verification Code</lable>
+            <lable>Google private Key</lable>
             <input type="text" name="privKey" value="">
 
             <!--// Indicate to the core what form we are-->
@@ -41,10 +45,6 @@
             <input type="button" value="Clear" id="clearStepOne" class="resetForm" />
             <input type="submit" value="Proceed to Step Three &#61&#62" id="processGoogleAPI" />
         </form>
-
-        <h3>OR</h3>
-
-        <h4>Sign in with an existing Google Account.</h4>
 
         <?php include_once('includes/footer.php'); ?>
     </body>
