@@ -19,7 +19,7 @@ class output {
 	 * @param stdClass $parameter [required] Data to be returned to the client
 	 * @return json || string
 	 */
-	public final function main(stdClass $parameter)
+	public static final function main(stdClass $parameter)
 	{
 		$parameter->return_type = (!isset($parameter->return_type) ? "json" : null);
 
@@ -47,7 +47,7 @@ class output {
 	 * @param $parameter [required] PHP data to be dump printed.
 	 * @return boolean
 	 */
-	public final function debugger($parameter)
+	public static final function debugger($parameter)
 	{
 		echo'<PRE>';
 		print_r($parameter);

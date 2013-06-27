@@ -1,4 +1,4 @@
-<?php
+<?PHP
 /**
  * @author kari.eve.trace@gmail.com
  * @since 2013-06-26
