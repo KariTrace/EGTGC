@@ -128,7 +128,10 @@ $().ready(function() {
 	        },
 			submitHandler: function(form) {
 				options.data = $("form#eveAPIForm").serialize();
-				$().loadData(options);
+				var promise = $().loadData(options);
+                promise.success(function(){
+                    window.location = "step2.php";
+                });
 			},
 	    });
 	});
