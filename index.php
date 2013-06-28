@@ -26,6 +26,6 @@
             <input type="submit" value="Proceed to Step Two &#61&#62" id="processEVEAPI" />
         </form>
 
-        <?php include_once('includes/footer.php'); ?>
+        <?php include_once('./src/includes/footer.php'); ?>
     </body>
 </html>

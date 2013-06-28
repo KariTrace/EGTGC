@@ -30,6 +30,6 @@
             <input type="submit" value="Proceed to Step Three &#61&#62" id="processGoogleAPI" />
         </form>
 
-        <?php include_once('includes/footer.php'); ?>
+        <?php include_once('./src/includes/footer.php'); ?>
     </body>
 </html>
