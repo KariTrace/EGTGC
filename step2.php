@@ -1,21 +1,5 @@
-<?php
-    include_once('/vendor/autoload.php');
+    <?php include_once("./src/includes/header.php"); ?>
 
-    //auto load here, need to get use to autoloading and using libs
-    $vendor     = "vendor/";
-    $components = "components/";
-?>
-<!DOCTYPE html>
-
-    <?php include_once("includes/header.php"); ?>
-
-    <body>
-		<?php include_once("includes/googleAnalytics.php") ?>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-        <!-- Add your site or application content here -->
         <h1>Welcome to EGTGC</h1>
         <h2>4 easy steps and your EVE calendar will be re-produced onto your Google calendar.</h2>
         <h3>Step 2 of 4: Google API Information</h3>
