@@ -28,19 +28,14 @@ $.fn.loadData = function(options) {
         type:   options.post_type,
         url:    options.url,
         success: function(data) {
-        	console.log(data);
-        	return true;
-
             //return as JSON if requested - does not work with promise objects!
             if (options.return_data == undefined || options.return_data == false || options.return_data === 'json') {
                 data = jQuery.parseJSON(data);
             }
 
-            /**
-             *This is awesome! If 'success_callback_method' is set; it is used as the jQ method index and is called.
-             *@author kari.eve.trace@gmail.com, deddy, PatrikAkerstrand
-             *@source: http://stackoverflow.com/questions/912596/how-to-turn-a-string-into-a-javascript-function-call
-             */
+            // This is awesome! If 'success_callback_method' is set; it is used as the jQ method index and is called.
+            // @author kari.eve.trace@gmail.com, PatrikAkerstrand
+            // @source: http://stackoverflow.com/questions/912596/how-to-turn-a-string-into-a-javascript-function-call
             if (options.success_callback_method) {
                 var fn = window[options.success_callback_method];
                 if(typeof fn === 'function') {
@@ -51,14 +46,15 @@ $.fn.loadData = function(options) {
             return data;
         },
         error: function(error) {
+
             //if an error occures, lets know about it.
             console.log('Error during ajax request. '+error.response);
             return false;
         },
         complete: function() {
 
-            //if a method to call on complete is specificed.
-            //todo refactor this to its own method so we can call it from any $jQ object.
+            // If a method to call on complete is specificed.
+            // TODO Refactor this to its own method so we can call it from any $jQ object.
             if (options.complete_callback_method) {
                 var fn = window[options.complete_callback_method];
                 if(typeof fn === 'function') {
