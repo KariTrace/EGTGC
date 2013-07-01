@@ -3,3 +3,4 @@ vendor/*
 components/*
 *.phar
 core/php_errors.log
+*.orig
