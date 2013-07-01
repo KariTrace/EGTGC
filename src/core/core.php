@@ -34,9 +34,11 @@ class core {
 
 		// If form data is valid
 		if ($data->bool) {
-			// What do we do with valid form data? Set it to session var
 
-			output::main($data);
+			// What do we do with valid form data? Set it to session var
+			if ( $data->form_name = "process")
+			$this->loadSession($data);
+			return true;
 
 		} else {
 			// TODO clean this up if possible. maybe pass a flag into $this->output that will do this encapsilated within it
@@ -51,12 +53,23 @@ class core {
 	 * @param object $paramatar [required] Object of completed form(s) data
 	 * @return boolean
 	 */
-	public function processData(object $parameter)
+	public function loadSession(object $parameter)
 	{
-		// Always fail be default
-		$return = false;
+		$retun_data = false;
 
-		return $return;
+		try {
+			// Load dat into SESSION
+			foreach ($data as $key => $value) {
+				$_SESSION[$key] = $value;
+			}
+
+			// Clearn $_POST
+			unset($_POST);
+		} catch (exception $e) {
+			output::debugger($e);
+		}
+
+		return $return_data;
 	}
 }
 
